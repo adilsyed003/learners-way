@@ -5,6 +5,7 @@ import fs from "fs";
 export async function GET() {
     const API_KEY = process.env.API_KEY;
     const filepath = path.join(process.cwd(), "data", "video.json");
+    console.log(filepath);
     try {
         const data = fs.readFileSync(filepath, "utf-8");
         const videoIds = JSON.parse(data).id;
@@ -20,7 +21,6 @@ export async function GET() {
         if (!channelResponse.ok) {
             throw new Error(`YouTube API error! status: ${channelResponse.status}`);
         }
-
         const channelData = await channelResponse.json();
         const channelMap = channelData.items.reduce((acc, channel) => {
             acc[channel.id] = channel.snippet.thumbnails.default.url;

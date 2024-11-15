@@ -10,7 +10,7 @@ export default function Home() {
   const [hasMore, setHasMore] = useState(true);
   const [page, setPage] = useState(1);
   const [error, setError] = useState(null);
-  const limit = 20;
+  const limit = 18;
   const fetchVideos = async () => {
     try {
       const response = await fetch("/api/add");
@@ -116,7 +116,7 @@ export default function Home() {
             </button>
           </form>
         </div>
-        <div className="flex items-center gap-10 flex-wrap justify-center">
+        <div className="flex items-center gap-8 flex-wrap justify-center">
           {visible.map((video) => (
             <List key={video.id} video={video} />
           ))}
