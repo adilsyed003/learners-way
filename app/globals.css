@@ -31,7 +31,9 @@ body {
   background-attachment: fixed;
   font-family: "Plus Jakarta Sans", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
